@@ -1,0 +1,25 @@
+/* Design: TheSight (brand default). White + navy, yellow highlights. */
+[data-variant="thesight-light"] {
+  --bg: #F4F6FA; --surface: #FFFFFF; --surface-solid: #FFFFFF; --surface-2: #F7F8FB; --surface-3: #ECEFF5;
+  --text: #0B1220; --text-2: #3b4458; --muted: #59637a;
+  --border: rgba(11, 18, 32, 0.10); --border-strong: rgba(11, 18, 32, 0.26);
+  --grid: #e6e9f0; --axis: #b8bfcc;
+  --shadow: 0 1px 2px rgba(11, 18, 32, 0.05), 0 6px 20px rgba(11, 18, 32, 0.06);
+  --tooltip-bg: #0B1220; --tooltip-text: #FFFFFF;
+  --series-1: #1853c6; --series-2: #d55c13; --series-3: #00935d; --series-4: #7b47bf;
+  --series-5: #c92f33; --series-6: #008aa3; --series-7: #b88000; --series-8: #c34189;
+  --over: #c92f33; --under: #1853c6; --neutral: #dde1ea; --other: #9aa3b5;
+  --kpi-stripe: var(--brand-yellow); --section-bg: #FFFFFF;
+}
+[data-variant="thesight-dark"] {
+  --bg: #0B1220; --surface: #121B2E; --surface-solid: #121B2E; --surface-2: #17223A; --surface-3: #1F2B47;
+  --text: #FFFFFF; --text-2: #c9d1e3; --muted: #9aa6bf;
+  --border: rgba(255, 255, 255, 0.09); --border-strong: rgba(255, 255, 255, 0.24);
+  --grid: #1f2a44; --axis: #36446a;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  --tooltip-bg: #1F2B47; --tooltip-text: #FFFFFF;
+  --series-1: #4a81eb; --series-2: #d8662a; --series-3: #019f68; --series-4: #9163d5;
+  --series-5: #d74745; --series-6: #139cb6; --series-7: #b98a00; --series-8: #cd5394;
+  --over: #d74745; --under: #4a81eb; --neutral: #2a3654; --other: #5d6a88;
+  --kpi-stripe: var(--brand-yellow); --section-bg: #0F1729;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "thesight",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TheSight2.0: Excel → interactive dashboard, as a single offline HTML file",
+  "scripts": {
+    "vendor": "node scripts/vendor.js",
+    "gen-samples": "node scripts/make-samples.js",
+    "pretest": "node scripts/make-samples.js",
+    "build": "node build.js",
+    "dev": "node build.js --watch",
+    "test": "node --test \"tests/*.test.js\""
+  },
+  "devDependencies": {
+    "echarts": "6.1.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}

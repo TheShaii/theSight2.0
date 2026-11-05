@@ -1,0 +1,55 @@
+{
+  "sheet": "Budget Dashboard",
+  "mode": "summary",
+  "title": "MARKETING BUDGET & SPEND — DEMO DASHBOARD",
+  "subtitleStartsWith": "Invented demo data",
+  "params": [{ "label": "Fiscal Year", "value": 2026 }],
+  "tables": [
+    {
+      "title": "Budget and Spend by Campaign",
+      "range": "A7:G22",
+      "dimensions": ["Campaign"],
+      "measures": ["Budget", "Committed", "Invoiced", "Actual Cost", "Paid", "Budget vs Actual"],
+      "bodyRows": 14,
+      "totalRow": 22
+    },
+    {
+      "title": "Budget and Spend by Department",
+      "range": "I7:M14",
+      "dimensions": ["Department"],
+      "measures": ["Budget", "Actual Cost", "Paid", "Budget vs Actual"],
+      "bodyRows": 6,
+      "totalRow": 14
+    },
+    {
+      "title": "Past Campaign Seasons — Spend by Phase",
+      "range": "A27:F31",
+      "dimensions": ["Phase"],
+      "measures": ["Budget", "Committed", "Invoiced", "Actual Cost", "Paid"],
+      "bodyRows": 3,
+      "totalRow": 31
+    },
+    {
+      "title": "Agency Spend — Top Demo Agencies",
+      "range": "I27:L38",
+      "dimensions": ["Agency"],
+      "measures": ["Committed", "Invoiced", "Actual Cost"],
+      "bodyRows": 10,
+      "totalRow": 38
+    }
+  ],
+  "derived": [
+    { "table": 0, "column": "Budget vs Actual", "op": "diff", "a": "Actual Cost", "b": "Budget", "positiveLabel": "Over budget" },
+    { "table": 1, "column": "Budget vs Actual", "op": "diff", "a": "Actual Cost", "b": "Budget", "positiveLabel": "Over budget" }
+  ],
+  "shared": [
+    { "measure": "Budget", "value": 4820500, "tables": [0, 1, 2] },
+    { "measure": "Actual Cost", "value": 5964312.48, "tables": [0, 1, 3] }
+  ],
+  "formatting": [
+    { "value": 98765.429999999993, "z": "#,##0.00;[Red]\\(#,##0.00\\);\\-", "text": "98,765.43" },
+    { "value": -12345.67, "z": "#,##0.00;[Red]\\(#,##0.00\\);\\-", "text": "(12,345.67)", "red": true },
+    { "value": 0, "z": "#,##0.00;[Red]\\(#,##0.00\\);\\-", "text": "-" }
+  ],
+  "compact": [{ "value": 4820500, "text": "4.82M" }, { "value": 5964312.48, "text": "5.96M" }]
+}

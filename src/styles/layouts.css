@@ -1,0 +1,79 @@
+/* Layout-specific arrangement. The same section/card DOM is rearranged per layout. */
+
+/* Executive: filters in a left sidebar, full-width sections of freely sized cards. */
+.lay-exec { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: var(--gap); align-items: start; }
+.lay-exec .sidebar { position: sticky; top: 64px; max-height: calc(100vh - 80px); overflow: auto; }
+.lay-exec .sidebar .filterbar { margin: 0; }
+.lay-exec .sidebar .filter-row { flex-direction: column; align-items: stretch; }
+.lay-exec .sidebar .field { flex-direction: column; align-items: stretch; }
+.lay-exec .sidebar .seg { display: flex; }
+.lay-exec .sidebar .seg button { flex: 1; }
+.lay-exec .sections, .lay-plain .sections, .lay-story .sections, .lay-bento .sections { display: grid; gap: var(--gap); }
+.lay-exec .section, .lay-plain .section, .lay-bento .section { background: var(--section-bg, var(--surface-2)); border: var(--card-border-width) solid var(--card-border, var(--border)); border-radius: var(--radius); padding: var(--pad); margin: 0; }
+
+/* Table Boards: one board per table, placed like the original sheet. */
+.lay-boards .sections { display: grid; grid-template-columns: repeat(var(--board-cols, 2), minmax(0, 1fr)); gap: var(--gap); align-items: start; }
+.lay-boards .section { background: var(--card-bg, var(--surface)); border: var(--card-border-width) solid var(--card-border, var(--border)); backdrop-filter: var(--card-filter, none); border-radius: var(--radius); padding: var(--pad); margin: 0; box-shadow: var(--shadow); }
+.lay-boards .section .table-wrap { max-height: 280px; }
+.lay-boards .board-origin { font-size: 11px; color: var(--muted); }
+
+/* Story: one readable column, big charts and captions. */
+.lay-story { max-width: 1040px; margin: 0 auto; }
+.lay-story .section { padding-top: 12px; border-top: 1px solid var(--border); }
+.lay-story .card .caption { font-size: 13px; color: var(--text-2); }
+
+/* Focus: hero chart plus a rail of thumbnails. */
+.lay-focus { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: var(--gap); align-items: start; }
+.lay-focus .hero .chart { height: min(62vh, 620px); }
+.lay-focus .rail { display: grid; gap: 10px; max-height: calc(100vh - 120px); overflow: auto; position: sticky; top: 64px; }
+.lay-focus .thumb { cursor: pointer; padding: 8px 10px; }
+.lay-focus .thumb .chart { height: 130px; min-height: 0; pointer-events: none; }
+.lay-focus .thumb[aria-current="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.lay-focus .thumb h3 { font-size: 12px; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(380px, 92vw); background: var(--surface); border-left: 1px solid var(--border-strong); z-index: 55; padding: 16px; overflow: auto; box-shadow: var(--shadow-pop); }
+.drawer .filter-row { flex-direction: column; align-items: stretch; }
+
+/* Presentation: one slide at a time. */
+.lay-present { position: fixed; inset: 0; z-index: 40; background: var(--bg); display: grid; grid-template-rows: auto 1fr auto; }
+.lay-present .slide-head { display: flex; align-items: center; gap: 10px; padding: 12px 24px; }
+.lay-present .slide-head h2 { margin: 0; font-size: 20px; flex: 1; }
+.lay-present .slide { padding: 0 24px 12px; display: grid; min-height: 0; }
+.lay-present .slide .card { height: 100%; }
+.lay-present .slide .chart { height: 100%; min-height: 300px; flex: 1; }
+.lay-present .slide .table-wrap { max-height: none; flex: 1; }
+.lay-present .slide-foot { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 10px; color: var(--muted); }
+.lay-present .slide .kpis { align-content: center; height: 100%; }
+.lay-present .slide .kpi .value { font-size: 40px; }
+
+/* Tabbed */
+.lay-tabs .tabbar { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: var(--gap); overflow-x: auto; }
+.lay-tabs .tabbar button { border: 0; background: none; padding: 9px 14px; cursor: pointer; border-bottom: 2px solid transparent; color: var(--text-2); white-space: nowrap; }
+.lay-tabs .tabbar button[aria-selected="true"] { border-color: var(--accent); color: var(--text); font-weight: 600; }
+
+@media (max-width: 1000px) {
+  .lay-exec, .lay-focus { grid-template-columns: 1fr; }
+  .lay-exec .sidebar, .lay-focus .rail { position: static; max-height: none; }
+  .lay-exec .sections, .lay-boards .sections { grid-template-columns: 1fr; }
+  .lay-focus .rail { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
+
+/* Bento: dense grid of mixed-size tiles. */
+.lay-bento .kpis { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+
+/* Exported preview: just the dashboard, no sidebar. */
+.lay-plain { max-width: 1600px; margin: 0 auto; }
+.lay-boards .section .card { box-shadow: none; }
+.lay-bento .section { background: transparent; border: 0; padding: 0; }
+
+/* Small screens: dashboard first, filters after it; KPIs two per row. */
+@media (max-width: 1000px) { .lay-exec .sidebar { order: 2; } }
+@media (max-width: 600px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .kpi { padding: 10px 12px; }
+  .kpi .value { font-size: 21px; }
+  .kpi .ico-badge { width: 26px; height: 26px; top: 8px; right: 8px; }
+  .dash { padding: 12px 10px 40px; }
+  .dash-head h1 { font-size: 20px; }
+  .section-head .tools { margin-left: 0; }
+  .g-footer { flex-wrap: wrap; padding: 10px 12px; }
+}

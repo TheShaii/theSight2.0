@@ -1,0 +1,40 @@
+/* Design: Neon Dark. Near-black grid, outlined glowing cards, neon marks, mono numerals. */
+[data-design="neon"] {
+  --font-num: ui-monospace, "Cascadia Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+  --font-head: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace; --head-weight: 600;
+  --radius: 6px; --radius-sm: 4px;
+  --series-1: #00a8b8; --series-2: #de6f00; --series-3: #00ae7b; --series-4: #8c5ee8;
+  --series-5: #67a800; --series-6: #df3798; --series-7: #1a95d8; --series-8: #e64343;
+  --over: #e64343; --under: #1a95d8; --other: #5f6b85;
+}
+[data-variant="neon-cyber"] {
+  --bg: #05080f;
+  --bg-image: linear-gradient(rgba(0, 200, 220, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 200, 220, 0.05) 1px, transparent 1px),
+              radial-gradient(60vw 40vw at 50% -10%, rgba(0, 168, 184, 0.18), transparent 70%);
+  --surface: #0a0f1f; --surface-solid: #0a0f1f; --surface-2: #0d1426; --surface-3: #142038;
+  --card-bg: rgba(10, 15, 31, 0.88); --card-border: rgba(0, 200, 220, 0.35); --section-bg: rgba(10, 15, 31, 0.5);
+  --text: #e6fbff; --text-2: #a9d9e3; --muted: #7fa9b6;
+  --border: rgba(0, 200, 220, 0.18); --border-strong: rgba(0, 220, 240, 0.5);
+  --grid: rgba(0, 200, 220, 0.10); --axis: rgba(0, 200, 220, 0.3);
+  --shadow: 0 0 0 1px rgba(0, 200, 220, 0.06), 0 0 22px rgba(0, 200, 220, 0.08);
+  --tooltip-bg: #0d1426; --tooltip-text: #e6fbff; --neutral: #18233a;
+  --kpi-glow: 0 0 14px rgba(0, 220, 240, 0.65); --kpi-stripe: #00a8b8;
+}
+[data-variant="neon-synth"] {
+  --bg: #0e0820;
+  --bg-image: linear-gradient(rgba(223, 55, 152, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(223, 55, 152, 0.06) 1px, transparent 1px),
+              radial-gradient(70vw 40vw at 50% 110%, rgba(223, 55, 152, 0.25), transparent 70%),
+              radial-gradient(50vw 30vw at 50% -10%, rgba(140, 94, 232, 0.25), transparent 70%);
+  --surface: #1a1030; --surface-solid: #1a1030; --surface-2: #211640; --surface-3: #2b1d52;
+  --card-bg: rgba(26, 16, 48, 0.9); --card-border: rgba(223, 55, 152, 0.4); --section-bg: rgba(26, 16, 48, 0.5);
+  --text: #fff0fb; --text-2: #e3c6e8; --muted: #b99ac4;
+  --border: rgba(223, 55, 152, 0.2); --border-strong: rgba(255, 110, 200, 0.55);
+  --grid: rgba(223, 55, 152, 0.12); --axis: rgba(223, 55, 152, 0.32);
+  --shadow: 0 0 0 1px rgba(223, 55, 152, 0.08), 0 0 24px rgba(140, 94, 232, 0.12);
+  --tooltip-bg: #211640; --tooltip-text: #fff0fb; --neutral: #2b1d52;
+  --kpi-glow: 0 0 14px rgba(255, 110, 200, 0.6); --kpi-stripe: #df3798;
+}
+[data-design="neon"] { --bg-size: 32px 32px, 32px 32px, auto; }
+[data-design="neon"] body { background-size: 32px 32px, 32px 32px, auto, auto; }
+[data-design="neon"] .card:hover, [data-design="neon"] .kpi:hover { box-shadow: 0 0 0 1px var(--border-strong), 0 0 28px var(--border); }
+[data-design="neon"] .kpi .label, [data-design="neon"] .section-head h2 { text-transform: uppercase; letter-spacing: .06em; }

@@ -1,0 +1,38 @@
+{
+  "pure": [
+    "utils.js",
+    "structure/grid.js",
+    "structure/blocks.js",
+    "structure/classify.js",
+    "structure/params.js",
+    "structure/tables.js",
+    "profiler.js",
+    "structure/reconcile.js",
+    "structure/flat.js",
+    "structure/analyze.js",
+    "filters.js",
+    "recommender.js",
+    "charts/core.js",
+    "charts/bars.js",
+    "charts/kpi.js",
+    "charts/more.js",
+    "page.js"
+  ],
+  "ui": [
+    "dom.js",
+    "designs.js",
+    "icons.js",
+    "media.js",
+    "layouts.js",
+    "customize.js",
+    "cards.js",
+    "filtercards.js",
+    "dashboard.js",
+    "views.js",
+    "gallery.js",
+    "export.js",
+    "review.js",
+    "loader.js",
+    "main.js"
+  ]
+}

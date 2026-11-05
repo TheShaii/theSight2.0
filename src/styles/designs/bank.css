@@ -1,0 +1,43 @@
+/* Design: Banking Gold (after an executive banking Power BI report). Navy band with gold,
+   KPI cards with colored LEFT borders and tinted square icon badges, ▲/▼ deltas,
+   gold-led charts, geometric sans. */
+[data-design="bank"] {
+  --font: "Segoe UI", "Avenir Next", "Helvetica Neue", system-ui, sans-serif;
+  --font-head: "Segoe UI Semibold", "Avenir Next", system-ui, sans-serif; --head-weight: 700; --kpi-weight: 750;
+  --radius: 12px; --radius-sm: 8px; --badge-radius: 8px;
+}
+[data-variant="bank-light"] {
+  --bg: #EEF0F3; --surface: #FFFFFF; --surface-solid: #FFFFFF; --surface-2: #F6F7F9; --surface-3: #E7EAEE;
+  --section-bg: #FFFFFF; --card-border: #E2E5EA;
+  --text: #121A2B; --text-2: #3F4859; --muted: #5C6577;
+  --border: rgba(18, 26, 43, 0.10); --border-strong: rgba(18, 26, 43, 0.26);
+  --grid: #E9EBEF; --axis: #BFC5CF;
+  --shadow: 0 1px 2px rgba(18, 26, 43, 0.06), 0 6px 18px rgba(18, 26, 43, 0.06);
+  --tooltip-bg: #121A2B; --tooltip-text: #FFFFFF;
+  --series-1: #a27000; --series-2: #1e55a4; --series-3: #be222a; --series-4: #00919b;
+  --series-5: #bc662f; --series-6: #7f42a6; --series-7: #3d892a; --series-8: #af467e;
+  --over: #be222a; --under: #1e55a4; --neutral: #E3E6EB; --other: #A3AAB6;
+  --band: #121A2B; --band-text: #FFFFFF; --band-text-2: #CDBF95;
+  --badge-bg: #FBF1D9; --badge-fg: #8A5F00;
+}
+[data-variant="bank-dark"] {
+  --bg: #0B1220; --surface: #141C2E; --surface-solid: #141C2E; --surface-2: #19233A; --surface-3: #212C46;
+  --section-bg: #111A2B; --card-border: rgba(212, 166, 58, 0.18);
+  --text: #FFFFFF; --text-2: #D4D8E2; --muted: #A4ACBD;
+  --border: rgba(255, 255, 255, 0.09); --border-strong: rgba(255, 255, 255, 0.24);
+  --grid: #212C46; --axis: #3A4766;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --tooltip-bg: #212C46; --tooltip-text: #FFFFFF;
+  --series-1: #b98918; --series-2: #4780d2; --series-3: #db4241; --series-4: #00a0a6;
+  --series-5: #d07843; --series-6: #9d60c6; --series-7: #529e41; --series-8: #c65b93;
+  --over: #db4241; --under: #4780d2; --neutral: #212C46; --other: #67728A;
+  --band: #070C17; --band-text: #FFFFFF; --band-text-2: #D9B85A;
+  --badge-bg: rgba(212, 166, 58, 0.16); --badge-fg: #E3BE5C;
+}
+[data-design="bank"] .kpi, [data-design="bank"] .stat-card { border-left: 4px solid var(--kpi-c, var(--series-1)); }
+[data-design="bank"] .kpi::before, [data-design="bank"] .stat-card::after { display: none; }
+[data-design="bank"] .kpi:nth-child(4n+1) { --kpi-c: var(--series-1); }
+[data-design="bank"] .kpi:nth-child(4n+2) { --kpi-c: var(--series-2); }
+[data-design="bank"] .kpi:nth-child(4n+3) { --kpi-c: var(--series-6); }
+[data-design="bank"] .kpi:nth-child(4n+4) { --kpi-c: var(--series-7); }
+[data-design="bank"] .kpi .label { text-transform: uppercase; letter-spacing: .05em; font-size: 11.5px; }

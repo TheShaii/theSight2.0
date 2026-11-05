@@ -1,0 +1,44 @@
+/* Design: Executive (after a post-merger integration Power BI report). Navy header band,
+   light grey-blue page, white rounded cards, KPI tiles with colored TOP borders, uppercase
+   micro-labels, teal links, status-pill feel. */
+[data-design="exec"] {
+  --radius: 12px; --radius-sm: 8px; --head-weight: 700; --kpi-weight: 750;
+  --badge-radius: 10px;
+}
+[data-variant="exec-light"] {
+  --bg: #F3F5F8; --surface: #FFFFFF; --surface-solid: #FFFFFF; --surface-2: #F7F9FB; --surface-3: #E8EDF3;
+  --section-bg: #FFFFFF; --card-border: #E3E8EF;
+  --text: #0E1E3A; --text-2: #3D4B63; --muted: #5A6880;
+  --border: rgba(14, 30, 58, 0.10); --border-strong: rgba(14, 30, 58, 0.26);
+  --grid: #E8ECF2; --axis: #B9C2D0;
+  --shadow: 0 1px 2px rgba(14, 30, 58, 0.06), 0 4px 14px rgba(14, 30, 58, 0.05);
+  --tooltip-bg: #0E1E3A; --tooltip-text: #FFFFFF;
+  --series-1: #2e5297; --series-2: #1c8742; --series-3: #724aab; --series-4: #008f83;
+  --series-5: #c92f33; --series-6: #1b8abd; --series-7: #bd7d00; --series-8: #b94f87;
+  --over: #c92f33; --under: #2e5297; --neutral: #E1E6EE; --other: #9AA6B8;
+  --band: #13294B; --band-text: #FFFFFF; --band-text-2: #C9D3E6;
+  --badge-bg: #E6F4F2; --badge-fg: #00756B;
+}
+[data-variant="exec-dark"] {
+  --bg: #0D1A2E; --surface: #152238; --surface-solid: #152238; --surface-2: #1A2A44; --surface-3: #22344F;
+  --section-bg: #12203A; --card-border: rgba(255, 255, 255, 0.08);
+  --text: #FFFFFF; --text-2: #C8D2E5; --muted: #9AA8C2;
+  --border: rgba(255, 255, 255, 0.09); --border-strong: rgba(255, 255, 255, 0.24);
+  --grid: #22344F; --axis: #3A4D6E;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  --tooltip-bg: #22344F; --tooltip-text: #FFFFFF;
+  --series-1: #4c88d3; --series-2: #4f9b3e; --series-3: #ca5794; --series-4: #c18500;
+  --series-5: #00a5a6; --series-6: #db4241; --series-7: #9065d0; --series-8: #ca723c;
+  --over: #db4241; --under: #4c88d3; --neutral: #22344F; --other: #5F6F8C;
+  --band: #091426; --band-text: #FFFFFF; --band-text-2: #C8D2E5;
+  --badge-bg: rgba(0, 165, 166, 0.16); --badge-fg: #5FD6D2;
+}
+/* KPI tiles: colored top edge, cycling through the palette like the reference. */
+[data-design="exec"] .kpi, [data-design="exec"] .stat-card { border-top: 4px solid var(--kpi-c, var(--series-1)); }
+[data-design="exec"] .kpi::before, [data-design="exec"] .stat-card::after { display: none; }
+[data-design="exec"] .kpi:nth-child(5n+1) { --kpi-c: var(--series-1); }
+[data-design="exec"] .kpi:nth-child(5n+2) { --kpi-c: var(--series-4); }
+[data-design="exec"] .kpi:nth-child(5n+3) { --kpi-c: var(--series-2); }
+[data-design="exec"] .kpi:nth-child(5n+4) { --kpi-c: var(--series-7); }
+[data-design="exec"] .kpi:nth-child(5n+5) { --kpi-c: var(--series-5); }
+[data-design="exec"] .kpi .label, [data-design="exec"] .stat-card h3 { text-transform: uppercase; letter-spacing: .06em; font-size: 11.5px; color: var(--muted); }

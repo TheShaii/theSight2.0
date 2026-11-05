@@ -1,0 +1,22 @@
+/* Design: Plum Retail (after a retail sales Power BI report). Plum band behind the title and
+   KPI row, grey page, white tiles with circular line-icon badges, plum pills. */
+[data-design="plum"] {
+  --radius: 10px; --radius-sm: 8px; --head-weight: 650; --kpi-weight: 750; --badge-radius: 50%;
+}
+[data-variant="plum-light"] {
+  --bg: #ECECEE; --surface: #FFFFFF; --surface-solid: #FFFFFF; --surface-2: #F6F5F7; --surface-3: #E6E3E8;
+  --section-bg: #FFFFFF; --card-border: #E1DEE4;
+  --text: #24141F; --text-2: #4C3D48; --muted: #66586A;
+  --border: rgba(74, 42, 63, 0.12); --border-strong: rgba(74, 42, 63, 0.28);
+  --grid: #EAE7EC; --axis: #C2B9C3;
+  --shadow: 0 1px 3px rgba(74, 42, 63, 0.08), 0 6px 16px rgba(74, 42, 63, 0.05);
+  --tooltip-bg: #4A2A3F; --tooltip-text: #FFFFFF;
+  --series-1: #7f366a; --series-2: #b5820c; --series-3: #007bb2; --series-4: #c13234;
+  --series-5: #008f91; --series-6: #b86838; --series-7: #4e59b1; --series-8: #3d892a;
+  --over: #c13234; --under: #007bb2; --neutral: #E7E2E8; --other: #A99CAA;
+  --band: #4A2A3F; --band-text: #FFFFFF; --band-text-2: #E2CFDC;
+  --badge-bg: #F3EAF0; --badge-fg: #6E3A5E;
+}
+[data-design="plum"] .kpi { text-align: center; justify-items: center; }
+[data-design="plum"] .kpi::before { display: none; }
+[data-design="plum"] .fbtn[aria-pressed="true"] { background: var(--band); color: var(--band-text); border-color: var(--band); }

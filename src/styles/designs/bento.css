@@ -1,0 +1,33 @@
+/* Design: Bento Soft. Neumorphic tiles, big radii, rounded type; pairs with the Bento layout. */
+[data-design="bento"] {
+  --font: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, sans-serif; --font-head: var(--font); --font-num: var(--font);
+  --radius: 24px; --radius-sm: 14px; --card-border-width: 0px; --head-weight: 700; --kpi-weight: 750;
+}
+[data-variant="bento-light"] {
+  --bg: #e9edf4; --surface: #f7f9fc; --surface-solid: #f7f9fc; --surface-2: #eef2f8; --surface-3: #e2e8f1;
+  --card-bg: #f7f9fc; --section-bg: transparent;
+  --text: #0B1220; --text-2: #3d4660; --muted: #5a6480;
+  --border: rgba(11, 18, 32, 0.08); --border-strong: rgba(11, 18, 32, 0.22);
+  --grid: #e1e6ef; --axis: #bcc4d3;
+  --shadow: 8px 8px 20px #cfd6e3, -8px -8px 20px #ffffff;
+  --tooltip-bg: #0B1220; --tooltip-text: #FFFFFF;
+  --series-1: #435bcf; --series-2: #d16022; --series-3: #009267; --series-4: #9846ab;
+  --series-5: #ab8704; --series-6: #bd2c49; --series-7: #0084a8; --series-8: #5f983a;
+  --over: #bd2c49; --under: #435bcf; --neutral: #dfe5ee; --other: #a3abbf;
+  --kpi-stripe: var(--brand-yellow);
+}
+[data-variant="bento-dark"] {
+  --bg: #121725; --surface: #1b2030; --surface-solid: #1b2030; --surface-2: #20263a; --surface-3: #283048;
+  --card-bg: #1b2030; --section-bg: transparent;
+  --text: #FFFFFF; --text-2: #cdd3e4; --muted: #9ba4bd;
+  --border: rgba(255, 255, 255, 0.07); --border-strong: rgba(255, 255, 255, 0.22);
+  --grid: #262d43; --axis: #3a4360;
+  --shadow: 8px 8px 20px #0b0f19, -6px -6px 18px #222a40;
+  --tooltip-bg: #283048; --tooltip-text: #FFFFFF;
+  --series-1: #6985e7; --series-2: #1ea381; --series-3: #d8714c; --series-4: #3a99ba;
+  --series-5: #d35570; --series-6: #b68b16; --series-7: #ad65be; --series-8: #6ea44e;
+  --over: #d35570; --under: #6985e7; --neutral: #283048; --other: #69728c;
+  --kpi-stripe: var(--brand-yellow);
+}
+[data-design="bento"] .lay-exec .section, [data-design="bento"] .lay-boards .section { box-shadow: none; padding: 0; border: 0; }
+[data-design="bento"] .kpi .value { font-size: 32px; }

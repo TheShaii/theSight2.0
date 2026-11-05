@@ -1,0 +1,27 @@
+/* TheSight2.0 brand tokens + shared mode defaults. Every design file builds on these.
+   Brand rule: yellow marks highlights (active tab, primary buttons, progress, drag guides,
+   selection) and is never text on white. Accent-colored text uses --accent-text. */
+:root {
+  --brand-navy: #0B1220; --brand-yellow: #FACC15; --brand-white: #FFFFFF;
+  --brand-muted: #c3cadb; --brand-line: rgba(255, 255, 255, 0.18); --brand-line-strong: rgba(255, 255, 255, 0.4);
+  --brand-hover: rgba(255, 255, 255, 0.08);
+  --accent: #FACC15; --accent-ink: #0B1220;
+  --highlight: #FACC15;
+}
+
+[data-mode="light"] {
+  --accent-soft: rgba(250, 204, 21, 0.22); --accent-text: #0B1220; --focus: #0B1220;
+  --good-text: #106b2f; --bad-text: #b42318; --warn-text: #8a5300;
+  --good: #16a34a; --warning: #FACC15; --critical: #dc2626;
+  --overlay: rgba(11, 18, 32, 0.5); --shadow-pop: 0 12px 40px rgba(11, 18, 32, 0.25);
+}
+[data-mode="dark"] {
+  --accent-soft: rgba(250, 204, 21, 0.16); --accent-text: #FACC15; --focus: #FACC15;
+  --good-text: #4ade80; --bad-text: #ff8a80; --warn-text: #FACC15;
+  --good: #22c55e; --warning: #FACC15; --critical: #f87171;
+  --overlay: rgba(0, 0, 0, 0.62); --shadow-pop: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Colorblind-safe toggle (any design): blue ↔ orange variance pair; texture is added in charts. */
+[data-palette="cb"][data-mode="light"] { --over: #c2410c !important; --under: #1d4ed8 !important; }
+[data-palette="cb"][data-mode="dark"] { --over: #fb923c !important; --under: #60a5fa !important; }
